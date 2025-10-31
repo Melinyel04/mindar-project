@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Projeto MindAR - Geudes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Importa o AR.js + AFRAME + MindAR -->
+    <script src="https://cdn.jsdelivr.net/npm/aframe@1.4.2/dist/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+  <body>
+    <!-- Configuração da cena de realidade aumentada -->
+    <a-scene mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/card-example/card.mind;"
+             color-space="sRGB"
+             renderer="colorManagement: true, physicallyCorrectLights"
+             vr-mode-ui="enabled: false"
+             device-orientation-permission-ui="enabled: false">
+      
+      <!-- Câmera AR -->
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <!-- Objeto 3D que aparece quando a imagem é detectada -->
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-box position="0 0.5 0" color="tomato"></a-box>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
